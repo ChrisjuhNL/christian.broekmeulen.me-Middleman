@@ -1,12 +1,13 @@
 <% wrap_layout :layout do %>
-  <div class="row">
-    <%= nav_link "All (#{blog.articles.size})", '/blog' %> -
-    <% i = 1 %>
-    <% blog.tags.each do |tag, articles| %>
-      <%= nav_link "#{tag} (#{articles.size})", tag_path(tag) %>
-      <% if i != blog.tags.length %> - <% end %>
-      <% i = i + 1 %>
-    <% end %>
-  </div>
+    <div class="row">
+        <%= nav_link "All (#{blog.articles.size})", '/blog' %> -
+        <% i = 1 %>
+        <% blog.tags.each do |tag, articles| %>
+          <%= nav_link "#{tag} (#{articles.size})", tag_path(tag) %>
+          <% if i != blog.tags.length %> - <% end %>
+          <% i = i + 1 %>
+        <% end %>
+      </div>
+
     <%= yield %>
 <% end %>
