@@ -145,6 +145,7 @@ DEPENDENCIES
   middleman-blog (~> 3.5.3)
   middleman-livereload (~> 3.4.3)
   middleman-minify-html
+  nokogiri
 
 BUNDLED WITH
    1.10.6

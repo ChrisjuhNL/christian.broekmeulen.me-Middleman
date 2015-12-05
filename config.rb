@@ -4,6 +4,9 @@
 
 # Time.zone = "UTC"
 set :index_file, "about.html"
+set :protocol, "http://"
+set :host, "localhost"
+set :port, 4567
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -97,6 +100,18 @@ helpers do
 
     link_to name, url, options
   end
+
+  def host_with_port
+    [host, optional_port].compact.join(':')
+  end
+
+  def optional_port
+    port unless port.to_i == 80
+  end
+
+  def absolute_url(source)
+    protocol + host_with_port + image_path(source)
+  end
 end
 
 set :css_dir, 'stylesheets'
@@ -111,6 +126,10 @@ configure :build do
   activate :minify_css
   activate :gzip
   activate :minify_html
+
+  # Used for generating absolute URLs
+  set :host, Middleman::PreviewServer.host
+  set :port, Middleman::PreviewServer.port
 
   # Minify Javascript on build
   # activate :minify_javascript
