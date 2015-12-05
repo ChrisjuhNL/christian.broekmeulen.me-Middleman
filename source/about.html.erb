@@ -1,14 +1,27 @@
 ---
-title: "Christian Broekmeulen"
-my_list:
-  - one
-  - two
-  - three
+title: "About me"
 ---
 
-<h1>List</h1>
-<ol>
-  <% current_page.data.my_list.each do |f| %>
-  <li><%= f %></li>
-  <% end %>
-</ol>
+
+
+
+<div class="row">
+  <div class="offset-by-one-third one-third column"><%= image_tag 'http://dummyimage.com/350x450/000/fff', :class => 'u-max-full-width' %></div>
+</div>
+<h1 class="name">Christian Broekmeulen</h1>
+<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium sagittis orci, quis accumsan odio sollicitudin eget. In sodales in enim id imperdiet. Suspendisse nec velit in ante auctor suscipit.</p>
+
+<div class="row social-icons">
+  <a href="https://twitter.com/ChristianB38" target="_blank"><span class="icon-twitter"></span></a>
+  <a href="https://github.com/ChrisjuhNL" target="_blank"><span class="icon-github"></span></a>
+  <a href="https://www.drupal.org/u/cbr" target="_blank"><span class="icon-drupal"></span></a>
+  <a href="https://www.linkedin.com/in/cbroekmeulen" target="_blank"><span class="icon-linkedin"></span></a>
+  <a href="contact"><span class="icon-mail" target="_blank"></span></a>
+</div>
+
+
+
+
+<div class="row"><span class="text-muted">Powered by <%= link_to 'Middleman', 'https://middlemanapp.com/', :target => '_BLANK' %> &
+                 <%= link_to 'Skeleton', 'http://getskeleton.com/', :target => '_BLANK' %></span></div>
+<div class="row"><%= link_to 'Source Code', 'http://getskeleton.com/', :target => '_BLANK' %></span></div>

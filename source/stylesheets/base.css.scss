@@ -1,2 +1,126 @@
-@import 'normalize';
-@import 'skeleton';
+@import 'skeleton/normalize';
+@import 'skeleton/skeleton';
+
+@import 'font';
+
+/* General */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-muted {
+  color: #777;
+}
+
+a {
+  text-decoration: none;
+
+  &.active {
+    font-weight: bold;
+  }
+}
+
+h2 {
+  margin: 0;
+}
+
+/* Forms */
+form {
+  margin-top: 20px;
+}
+.u-full-width {
+  max-width: 100%;
+}
+
+textarea {
+  min-height: 125px;
+}
+
+/* About me */
+.name {
+  margin: 0;
+}
+
+.social-icons {
+  font-size: 3.5em;
+  letter-spacing: 0.2em;
+
+  a {
+    color: #777;
+
+    &:hover {
+      color: #666;
+    }
+  }
+}
+
+/* Portfolio */
+.portfolio {
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+/* Blog */
+article {
+  &.preview {
+    border-bottom: .2125em solid #33C3F0;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
+
+/* Navbar */
+$navbar_height: 5rem;
+
+.navbar {
+  display: block;
+  width: 100%;
+  height: $navbar_height;
+  background: #fff;
+  z-index: 99;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+
+  .container {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+.navbar-spacer {
+  @extend .navbar;
+  display: none;
+}
+
+.navbar > .container {
+  width: 100%;
+}
+
+.navbar-list {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.navbar-item {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.navbar-link {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  margin-right: 35px;
+  text-decoration: none;
+  line-height: $navbar_height;
+  color: #222;
+}

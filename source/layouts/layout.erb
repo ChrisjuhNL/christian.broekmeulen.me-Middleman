@@ -1,16 +1,11 @@
 <!doctype html>
 <html>
   <head>
-
-    <!-- Basic Page Needs
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>About me</title>
+    <title><%= current_page.data.title %></title>
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- FONT
@@ -21,19 +16,24 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <%= stylesheet_link_tag "base" %>
 
-    <!-- Scripts
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    <!-- Favicon
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="../../dist/images/favicon.png">
 
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
   <body>
-    
-    <div id="main" role="main">
+      <div class="navbar-spacer"></div>
+      <nav class="navbar text-center">
+            <div class="container">
+              <ul class="navbar-list">
+                <li class="navbar-item"><%= link_to 'About me', '/', :class => "navbar-link" %></li>
+                <li class="navbar-item"><%= link_to 'Portfolio', '/portfolio', :class => "navbar-link" %></li>
+                <li class="navbar-item"><%= link_to 'Blog', '/blog', :class => "navbar-link" %></li>
+                <li class="navbar-item"><%= link_to 'Contact', '/contact', :class => "navbar-link" %></li>
+              </ul>
+            </div>
+          </nav>
+
+    <div class="container text-center">
       <%= yield %>
     </div>
   </body>

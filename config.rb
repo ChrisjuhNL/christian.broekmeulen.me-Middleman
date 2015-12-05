@@ -81,6 +81,24 @@ activate :livereload
 #   end
 # end
 
+helpers do
+  def nav_link(name, url, options={})
+    currentPage = current_page.url.gsub(/\/$/, '')
+
+    options = {
+      class: "",
+      active_if: url,
+      page: currentPage,
+    }.update options
+    a = options.delete(:active_if)
+
+    active = Regexp === a ? currentPage =~ a : currentPage == a
+    options[:class] += " active" if active
+
+    link_to name, url, options
+  end
+end
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'

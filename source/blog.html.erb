@@ -1,8 +1,10 @@
 ---
 pageable: true
-per_page: 10
+per_page: 5
 layout: blog
+title: "Blog"
 ---
+
 <% if paginate && num_pages > 1 %>
   <p>Page <%= page_number %> of <%= num_pages %></p>
 
@@ -11,12 +13,17 @@ layout: blog
   <% end %>
 <% end %>
 
-<% page_articles.each_with_index do |article, i| %>
-  <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-  <!-- use article.summary(250) if you have Nokogiri available to show just
-       the first 250 characters -->
-  <%= article.body %>
-<% end %>
+<div class="row text-left">
+  <% page_articles.each_with_index do |article, i| %>
+  <article class="preview">
+      <h2><%= link_to article.title, article %></h2>
+      <span class="text-muted"><%= article.date.strftime('%B %eth, %Y') %></span>
+      <%= article.body %>
+
+      <%= link_to "Read more...", article, :class => "button button-primary" %>
+  </article>
+  <% end %>
+</div>
 
 
 <% if paginate %>
