@@ -1,0 +1,14 @@
+---
+title: "Christian Broekmeulen"
+my_list:
+  - one
+  - two
+  - three
+---
+
+<h1>List</h1>
+<ol>
+  <% current_page.data.my_list.each do |f| %>
+  <li><%= f %></li>
+  <% end %>
+</ol>
