@@ -6,9 +6,9 @@
 
 
             <% article_url = absolute_url(current_article.url) %>
-            <%= link_to 'Share on Twitter', 'https://twitter.com/intent/tweet', :query => { :text => current_article.title + ' ' + article_url } %> -
-            <%= link_to 'Share on Facebook', 'https://www.facebook.com/sharer/sharer.php', :query => { :u => article_url } %> -
-            <%= link_to 'Share on LinkedIn', 'https://www.linkedin.com/shareArticle', :query => { :mini => true, :url => article_url,
+            <%= link_to 'Share on Twitter', 'https://twitter.com/intent/tweet', target: "_blank", :query => { :text => current_article.title + ' ' + article_url } %> -
+            <%= link_to 'Share on Facebook', 'https://www.facebook.com/sharer/sharer.php', target: "_blank", :query => { :u => article_url } %> -
+            <%= link_to 'Share on LinkedIn', 'https://www.linkedin.com/shareArticle', target: "_blank", :query => { :mini => true, :url => article_url,
             :title => current_article.title, :summary => Nokogiri::HTML(current_article.summary).text, :source => '' } %>
     </article>
 <% end %>

@@ -1,8 +1,9 @@
 ---
 pageable: true
 per_page: 12
-title: Blog
 ---
+<% @title = tagname + ' blog' %>
+
 <% if paginate && num_pages > 1 %>
   <p>Page <%= page_number %> of <%= num_pages %></p>
 
