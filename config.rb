@@ -3,7 +3,7 @@
 ###
 
 # Time.zone = "UTC"
-set :index_file, "about.html"
+set :index_file, "index.html"
 set :protocol, "http://"
 set :host, "localhost"
 set :port, 4567
@@ -127,9 +127,6 @@ configure :build do
   activate :gzip
   activate :minify_html
 
-  # Used for generating absolute URLs
-  set :host, Middleman::PreviewServer.host
-  set :port, Middleman::PreviewServer.port
 
   # Minify Javascript on build
   # activate :minify_javascript
