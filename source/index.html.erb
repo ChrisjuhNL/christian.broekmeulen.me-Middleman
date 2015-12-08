@@ -6,10 +6,12 @@ title: "About me"
 
 
 <div class="row">
-  <div class="offset-by-one-third one-third column"><%= image_tag 'http://dummyimage.com/350x450/000/fff', :class => 'u-max-full-width' %></div>
+  <div class="offset-by-one-third one-third column"><%= image_tag 'personal-picture.jpg', :class => 'u-max-full-width' %></div>
 </div>
 <h1 class="name">Christian Broekmeulen</h1>
-<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium sagittis orci, quis accumsan odio sollicitudin eget. In sodales in enim id imperdiet. Suspendisse nec velit in ante auctor suscipit.</p>
+<p class="text-muted">
+  Dutchman currently studying Marketing at the University of the West of Scotland with a strong affinity in webdevelopment.
+</p>
 
 <div class="row social-icons">
   <a href="https://twitter.com/ChristianB38" target="_blank"><span class="icon-twitter"></span></a>
@@ -19,9 +21,14 @@ title: "About me"
   <a href="contact"><span class="icon-mail" target="_blank"></span></a>
 </div>
 
+<div class="row">
+  <span class="text-muted">©2015 Some rights reserved [<%= link_to 'CC BY-NC 3.0', 'https://creativecommons.org/licenses/by-nc/3.0/', :target => '_BLANK' %>]</span>
+</div>
+<div class="row">
+  <span class="text-muted">
+    Built using <%= link_to 'Middleman', 'https://middlemanapp.com/', :target => '_BLANK' %> &
+    <%= link_to 'Skeleton', 'http://getskeleton.com/', :target => '_BLANK' %>
+  </span>
+</div>
 
-
-
-<div class="row"><span class="text-muted">Powered by <%= link_to 'Middleman', 'https://middlemanapp.com/', :target => '_BLANK' %> &
-                 <%= link_to 'Skeleton', 'http://getskeleton.com/', :target => '_BLANK' %></span></div>
 <div class="row"><%= link_to 'Source Code', 'https://github.com/ChrisjuhNL/christian.broekmeulen.me', :target => '_BLANK' %></span></div>
