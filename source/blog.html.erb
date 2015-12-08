@@ -10,7 +10,9 @@ title: "Blog"
   <article class="preview">
       <h2><%= link_to article.title, article %></h2>
       <span class="text-muted"><%= article.date.strftime('%B %eth, %Y') %></span>
-      <%= article.body %>
+      <p>
+        <%= Nokogiri::HTML(article.summary).text %>
+      </p>
 
       <%= link_to "Read more...", article, :class => "button button-primary" %>
   </article>
