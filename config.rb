@@ -110,7 +110,7 @@ helpers do
   end
 
   def absolute_url(source)
-    protocol + host_with_port + image_path(source)
+    protocol + host_with_port + source
   end
 end
 
