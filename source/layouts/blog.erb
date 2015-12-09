@@ -3,7 +3,7 @@
         <%= nav_link "All (#{blog.articles.size})", '/blog' %> -
         <% i = 1 %>
         <% blog.tags.each do |tag, articles| %>
-          <%= nav_link "#{tag} (#{articles.size})", tag_path(tag) %>
+          <%= nav_link "#{tag} (#{articles.size})", '/blog/category/' + tag.downcase %>
           <% if i != blog.tags.length %> - <% end %>
           <% i = i + 1 %>
         <% end %>

@@ -12,10 +12,10 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   blog.prefix = "blog"
 
-  blog.permalink = "{tags}/{title}"
+  blog.permalink = "{tags}/{title}/index.html"
   # Matcher for blog source files
   # blog.sources = "{year}-{month}-{day}-{title}"
-  blog.taglink = "category/{tag}"
+  blog.taglink = "category/{tag}/index.html"
   blog.layout = "blogpost"
   # blog.summary_separator = /(READMORE)/
    blog.summary_length = 350
@@ -85,21 +85,20 @@ activate :livereload
 # end
 
 helpers do
-  def nav_link(name, url, options={})
-    currentPage = current_page.url.gsub(/\/$/, '')
+def nav_link(name, url, options={})
+currentPage = current_page.url.gsub(/\/$/, '')
 
-    options = {
-      class: "",
-      active_if: url,
-      page: currentPage,
-    }.update options
-    a = options.delete(:active_if)
+  options = {
+    class: "",
+    active_if: url,
+    page: currentPage,
+  }.update options
+  a = options.delete(:active_if)
+  active = Regexp === a ? currentPage =~ a : currentPage == a
+  options[:class] += " active" if active
 
-    active = Regexp === a ? currentPage =~ a : currentPage == a
-    options[:class] += " active" if active
-
-    link_to name, url, options
-  end
+  link_to name, url, options
+end
 
   def host_with_port
     [host, optional_port].compact.join(':')
