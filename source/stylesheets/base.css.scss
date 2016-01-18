@@ -136,3 +136,54 @@ $navbar_height: 5rem;
   line-height: $navbar_height;
   color: #222;
 }
+
+/* Mobile */
+@media (max-width: 400px) {
+  .navbar .container {
+    padding: 0;
+  }
+
+  .container {
+    padding: 0 5px;
+  }
+
+  /* Menu */
+  a.navbar-link {
+    margin-right: 5px;
+    margin-left: 4px;
+  }
+
+  /* Front Page */
+  h1 {
+    font-size: 28px;
+  }
+
+  .social-icons {
+    letter-spacing: 0.042em;
+  }
+
+  img.about-me.u-max-full-width {
+    max-width: 49%;
+  }
+
+  /* Portfolio */
+  h2 {
+    font-size: 28px;
+  }
+
+  /* Contact me */
+  form {
+    margin: 0;
+  }
+
+  pre, blockquote, dl, figure, table, p, ul, ol, form {
+    margin-bottom: 1rem;
+  }
+
+  input.button-primary {
+    width: 100%;
+  }
+
+
+
+}
